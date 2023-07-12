@@ -1,5 +1,7 @@
 package Terminales;
 
+import java.util.ArrayList;
+
 public class Viaje {
 
     private String identificador;
@@ -8,9 +10,10 @@ public class Viaje {
     private double precio;
     private int numMaxPasajeros;
     private int numActualPasajeros;
-    private Pasajero pasajeros;
+    private ArrayList<Pasajero> pasajeros;
 
-    public Viaje(String identificador, String ciudadOrigen, String ciudadDestino, double precio, int numMaxPasajeros, Pasajero pasajeros) {
+    public Viaje(String identificador, String ciudadOrigen, String ciudadDestino, double precio, int numMaxPasajeros,
+            ArrayList<Pasajero> pasajeros) {
         this.identificador = identificador;
         this.ciudadOrigen = ciudadOrigen;
         this.ciudadDestino = ciudadDestino;
@@ -18,7 +21,6 @@ public class Viaje {
         this.numMaxPasajeros = numMaxPasajeros;
         this.numActualPasajeros = 0;
         this.pasajeros = pasajeros;
-        
     }
 
     public String getIdentificador() {
@@ -45,15 +47,20 @@ public class Viaje {
         return numActualPasajeros;
     }
 
-    public Pasajero getPasajeros(int i ) {
-        //retornar pasajeros por el index i;
-        return pasajeros;
+    public Pasajero getPasajeros(int i) {
+        // retornar pasajeros por el index i;
+        return pasajeros.get(i);
     }
-    
 
     public Pasajero getPasajeros(String id) {
         // retornar un arreglo de pasajeros que tengan el mismo id
-        return pasajeros;
+        for (Pasajero pasajero : pasajeros) {
+            if (pasajero.getNumeroDocumento().equals(id)) {
+                return pasajero;
+            }
+        }
+
+        return null;
     }
-    
+
 }
