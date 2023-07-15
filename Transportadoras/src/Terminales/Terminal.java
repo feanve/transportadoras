@@ -76,6 +76,6 @@ public class Terminal {
     }
 
     public String toString() {
-        return nombre + " ubicada en: \n" + ciudad + " - " + departamento;
+        return nombre + " ubicada en: \n" + ciudad + " - " + departamento + "\n";
     }
 }
