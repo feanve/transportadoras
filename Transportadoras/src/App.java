@@ -5,5 +5,6 @@ public class App {
         // Consultas.consultarTerminales();
         // Consultas.consultarEmpresasPatrocinadoras();
         // Consultas.consultarRecursosPublicos();
+        Consultas.consultarCompanias();
     }
 }

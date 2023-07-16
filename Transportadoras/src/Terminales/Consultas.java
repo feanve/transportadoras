@@ -8,6 +8,7 @@ public class Consultas {
     static String infoTerminalesPriv = "";
     static String infoTerminalesPub = "";
     static String infoEmpresas = "";
+    static String infoCompanias = "";
 
     public static void consultarTerminales() {
 
@@ -87,5 +88,36 @@ public class Consultas {
                     "No se encontró la terminal pública.");
         }
 
+    }
+
+    public static void consultarCompanias() {
+        ArrayList<Terminal> terminales = new ArrayList<>();
+
+        terminales.addAll(Utilities.obtenerTerminalesPrivados());
+        terminales.addAll(Utilities.obtenerTerminalesPublicos());
+
+        String nombreTerminal = JOptionPane.showInputDialog(null,
+                "Ingrese el nombre de la terminal a consultar:");
+
+        Terminal terminal = terminales.stream()
+                .filter(terminal1 -> terminal1.getNombre().equals(nombreTerminal))
+                .findFirst()
+                .orElse(null);
+
+        if (terminal != null) {
+            terminal.obtenerCompanias().forEach(compania -> {
+                infoCompanias += compania.getNombre() + "\n";
+            });
+
+            JOptionPane.showMessageDialog(null,
+                    "Consultando información de compañías...");
+
+            JOptionPane.showMessageDialog(null,
+                    "Compañías:\n\n" +
+                            infoCompanias);
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "No se encontró la terminal.");
+        }
     }
 }

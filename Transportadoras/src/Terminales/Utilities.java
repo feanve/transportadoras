@@ -63,23 +63,43 @@ public class Utilities {
         public static ArrayList<TerminalPublico> obtenerTerminalesPublicos() {
                 ArrayList<TerminalPublico> terminales = new ArrayList<>();
 
-                terminales.add(new TerminalPublico("Terminal Cuba", "Pereira", "Risaralda", "Colombia", 2, 1000000));
+                terminales.add(new TerminalPublico("Terminal Cuba", "Pereira", "Risaralda", "Colombia", 2,
+                                new ArrayList<Compania>(
+                                                Arrays.asList(obtenerCompaniasTransporte().get(0))),
+                                1000000));
                 terminales.add(new TerminalPublico("Terminal La Pintada", "La Pintada", "Antioquia", "Colombia", 3,
+                                new ArrayList<Compania>(
+                                                Arrays.asList(obtenerCompaniasTransporte().get(6))),
                                 2000000));
                 terminales.add(new TerminalPublico("Terminal Dosquebradas", "Dosquebradas", "Risaralda", "Colombia", 3,
+                                new ArrayList<Compania>(
+                                                Arrays.asList(obtenerCompaniasTransporte().get(0))),
                                 2500000));
                 terminales.add(new TerminalPublico("Terminal De Cali", "Cali", "Valle del Cauda", "Colombia", 1,
+                                new ArrayList<Compania>(
+                                                Arrays.asList(obtenerCompaniasTransporte().get(1))),
                                 1000000));
                 terminales.add(new TerminalPublico("Terminal De Manizales", "Manizales", "Caldas", "Colombia", 4,
+                                new ArrayList<Compania>(
+                                                Arrays.asList(obtenerCompaniasTransporte().get(2))),
                                 9000000));
                 terminales.add(
                                 new TerminalPublico("Terminal De Barrancabermeja", "Barrancabermeja", "Santander",
-                                                "Colombia", 1, 1100000));
+                                                "Colombia", 1, new ArrayList<Compania>(
+                                                                Arrays.asList(obtenerCompaniasTransporte().get(5))),
+                                                1100000));
                 terminales.add(new TerminalPublico("Terminal De Amazonas", "Amazonas", "Leticia", "Colombia", 1,
+                                new ArrayList<Compania>(
+                                                Arrays.asList(obtenerCompaniasTransporte().get(8))),
                                 3000000));
                 terminales.add(new TerminalPublico("Terminal De cartago", "Cartago", "Valle del Cauca", "Colombia", 3,
+                                new ArrayList<Compania>(
+                                                Arrays.asList(obtenerCompaniasTransporte().get(3))),
                                 2700000));
-                terminales.add(new TerminalPublico("Terminal De Huila", "Neiva", "Huila", "Colombia", 4, 1500000));
+                terminales.add(new TerminalPublico("Terminal De Huila", "Neiva", "Huila", "Colombia", 4,
+                                new ArrayList<Compania>(
+                                                Arrays.asList(obtenerCompaniasTransporte().get(7))),
+                                1500000));
 
                 return terminales;
         }
@@ -153,6 +173,14 @@ public class Utilities {
                                                 new Viaje("3", "Neiva", "Dosquebradas", 23400, 20, null),
                                                 new Viaje("4", "Neiva", "La Virginia", 43000, 20, null),
                                                 new Viaje("5", "Neiva", "Bogotá", 90000, 20, null))),
+                                1));
+                companias.add(new Compania("Transito Amazonico", new ArrayList<Viaje>(
+                                Arrays.asList(
+                                                new Viaje("1", "Amazonas", "Cali", 129000, 20, null),
+                                                new Viaje("2", "Amazonas", "Medellín", 23000, 20, null),
+                                                new Viaje("3", "Amazonas", "Dosquebradas", 23400, 20, null),
+                                                new Viaje("4", "Amazonas", "La Virginia", 43000, 20, null),
+                                                new Viaje("5", "Amazonas", "Bogotá", 90000, 20, null))),
                                 1));
 
                 return companias;
