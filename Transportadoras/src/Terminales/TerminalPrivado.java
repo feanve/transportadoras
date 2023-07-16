@@ -35,4 +35,5 @@ public class TerminalPrivado extends Terminal {
     public ArrayList<String> getEmpresas() {
         return empresas;
     }
+
 }

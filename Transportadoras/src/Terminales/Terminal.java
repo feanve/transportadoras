@@ -74,4 +74,8 @@ public class Terminal {
         // retornar una compania por el index i
         return listaCompanias.get(i);
     }
+
+    public String toString() {
+        return nombre + " ubicada en: \n" + ciudad + " - " + departamento + "\n";
+    }
 }

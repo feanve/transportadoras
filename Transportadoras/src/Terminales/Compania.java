@@ -17,6 +17,7 @@ public class Compania {
     }
 
     public Compania(String nombre, ArrayList<Viaje> listaViajes, int numViaje) {
+        this.nombre = nombre;
         this.listaViajes = listaViajes;
         this.numViaje = numViaje;
     }
@@ -47,6 +48,14 @@ public class Compania {
     public Viaje getViaje(int i) {
         // retornar un viaje por el index i
         return listaViajes.get(i);
+    }
+
+    public String toString() {
+        return nombre + "\n";
+    }
+
+    public ArrayList<Viaje> obtenerViajes() {
+        return listaViajes;
     }
 
 }
