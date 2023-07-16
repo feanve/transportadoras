@@ -63,4 +63,10 @@ public class Viaje {
         return null;
     }
 
+    public String toString() {
+        String precioFormateado = String.format("%,.2f", precio);
+
+        return identificador + ". De " + ciudadOrigen + " a " + ciudadDestino + "\n" + "$" + precioFormateado + "\n";
+    }
+
 }

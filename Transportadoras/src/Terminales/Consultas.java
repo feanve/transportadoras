@@ -9,6 +9,8 @@ public class Consultas {
     static String infoTerminalesPub = "";
     static String infoEmpresas = "";
     static String infoCompanias = "";
+    static String infoViajes = "";
+    static int indice = 0;
 
     public static void consultarTerminales() {
 
@@ -115,6 +117,55 @@ public class Consultas {
             JOptionPane.showMessageDialog(null,
                     "Compañías:\n\n" +
                             infoCompanias);
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "No se encontró la terminal.");
+        }
+    }
+
+    public static void consultarViajes() {
+        ArrayList<Terminal> terminales = new ArrayList<>();
+
+        terminales.addAll(Utilities.obtenerTerminalesPrivados());
+        terminales.addAll(Utilities.obtenerTerminalesPublicos());
+
+        String nombreTerminal = JOptionPane.showInputDialog(null,
+                "Ingrese el nombre de la terminal a consultar:");
+
+        Terminal terminal = terminales.stream()
+                .filter(terminal1 -> terminal1.getNombre().equals(nombreTerminal))
+                .findFirst()
+                .orElse(null);
+
+        if (terminal != null) {
+            // mostrar listado de compañias
+            indice = 1;
+
+            terminal.obtenerCompanias().forEach((compania) -> {
+                infoCompanias += indice + ". " + compania.getNombre() + "\n";
+                indice++;
+            });
+
+            int opcion = Integer.parseInt(JOptionPane.showInputDialog(null,
+                    "Seleccione una compañía:\n\n" +
+                            infoCompanias));
+
+            Compania compania = terminal.obtenerCompanias().get(opcion - 1);
+
+            // mostrar listado de viajes
+            infoViajes = "";
+
+            compania.obtenerViajes().forEach(viaje -> {
+                infoViajes += viaje + "\n";
+            });
+
+            JOptionPane.showMessageDialog(null,
+                    "Consultando información de viajes...");
+
+            JOptionPane.showMessageDialog(null,
+                    "Viajes:\n\n" +
+                            infoViajes);
+
         } else {
             JOptionPane.showMessageDialog(null,
                     "No se encontró la terminal.");

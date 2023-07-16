@@ -54,4 +54,8 @@ public class Compania {
         return nombre + "\n";
     }
 
+    public ArrayList<Viaje> obtenerViajes() {
+        return listaViajes;
+    }
+
 }
