@@ -63,6 +63,8 @@ public class Utilities {
         public static ArrayList<TerminalPublico> obtenerTerminalesPublicos() {
                 ArrayList<TerminalPublico> terminales = new ArrayList<>();
 
+                System.out.println(obtenerCompaniasTransporte().get(0));
+
                 terminales.add(new TerminalPublico("Terminal Cuba", "Pereira", "Risaralda", "Colombia", 2,
                                 new ArrayList<Compania>(
                                                 Arrays.asList(obtenerCompaniasTransporte().get(0))),
