@@ -60,8 +60,8 @@ public class Utilities {
                 return terminales;
         }
 
-        public static List<TerminalPublico> obtenerTerminalesPublicos() {
-                List<TerminalPublico> terminales = new ArrayList<>();
+        public static ArrayList<TerminalPublico> obtenerTerminalesPublicos() {
+                ArrayList<TerminalPublico> terminales = new ArrayList<>();
 
                 terminales.add(new TerminalPublico("Terminal Cuba", "Pereira", "Risaralda", "Colombia", 2, 1000000));
                 terminales.add(new TerminalPublico("Terminal La Pintada", "La Pintada", "Antioquia", "Colombia", 3,

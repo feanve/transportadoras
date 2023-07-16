@@ -60,4 +60,32 @@ public class Consultas {
         }
 
     }
+
+    public static void consultarRecursosPublicos() {
+
+        ArrayList<TerminalPublico> terminalesPublicos = Utilities.obtenerTerminalesPublicos();
+
+        String nombreTerminal = JOptionPane.showInputDialog(null,
+                "Ingrese el nombre de la terminal pública a consultar:");
+
+        TerminalPublico terminalPublico = terminalesPublicos.stream()
+                .filter(terminal -> terminal.getNombre().equals(nombreTerminal))
+                .findFirst()
+                .orElse(null);
+
+        if (terminalPublico != null) {
+            String recursosFormateados = String.format("%,.2f", terminalPublico.getRecursosPublicos());
+
+            JOptionPane.showMessageDialog(null,
+                    "Consultando el valor de recursos públicos...");
+
+            JOptionPane.showMessageDialog(null,
+                    "Recursos públicos:\n\n" +
+                            "$" + recursosFormateados);
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "No se encontró la terminal pública.");
+        }
+
+    }
 }
