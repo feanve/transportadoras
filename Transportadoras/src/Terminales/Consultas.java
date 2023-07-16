@@ -171,4 +171,46 @@ public class Consultas {
                     "No se encontró la terminal.");
         }
     }
+
+    public static void consultarViajesOrigenDestino() {
+        ArrayList<Terminal> terminales = new ArrayList<>();
+
+        terminales.addAll(Utilities.obtenerTerminalesPrivados());
+        terminales.addAll(Utilities.obtenerTerminalesPublicos());
+
+        String origen = JOptionPane.showInputDialog(null,
+                "Ingrese la ciudad de origen:");
+
+        String destino = JOptionPane.showInputDialog(null,
+                "Ingrese la ciudad de destino:");
+
+        infoViajes = "";
+
+        terminales.forEach(terminal -> {
+            terminal.obtenerCompanias().forEach(compania -> {
+                compania.obtenerViajes().forEach(viaje -> {
+                    if (viaje.getCiudadOrigen().equals(origen) && viaje.getCiudadDestino().equals(destino)) {
+                        infoViajes += terminal.getNombre() + "\n" +
+                                compania.getNombre() + "\n" +
+                                viaje + "\n";
+
+                    }
+                });
+            });
+        });
+
+        if (infoViajes != "") {
+
+            JOptionPane.showMessageDialog(null,
+                    "Consultando información de viajes...");
+
+            JOptionPane.showMessageDialog(null,
+                    "Viajes:\n\n" +
+                            infoViajes);
+        } else {
+            JOptionPane.showMessageDialog(null,
+                    "No se encontraron viajes.");
+        }
+
+    }
 }

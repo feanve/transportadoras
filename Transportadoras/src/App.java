@@ -6,7 +6,8 @@ public class App {
         // Consultas.consultarEmpresasPatrocinadoras();
         // Consultas.consultarRecursosPublicos();
         // Consultas.consultarCompanias();
-        Consultas.consultarViajes();
+        // Consultas.consultarViajes();
+        // Consultas.consultarViajesOrigenDestino();
 
     }
 }
