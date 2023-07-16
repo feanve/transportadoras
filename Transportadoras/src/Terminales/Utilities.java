@@ -6,8 +6,8 @@ import java.util.List;
 
 public class Utilities {
 
-        public static List<TerminalPrivado> obtenerTerminalesPrivados() {
-                List<TerminalPrivado> terminales = new ArrayList<>();
+        public static ArrayList<TerminalPrivado> obtenerTerminalesPrivados() {
+                ArrayList<TerminalPrivado> terminales = new ArrayList<>();
 
                 terminales.add(
                                 new TerminalPrivado("Terminal TS La Lulita", "Cali", "Valle del Cauca", "Colombia", 1,
@@ -84,8 +84,8 @@ public class Utilities {
                 return terminales;
         }
 
-        public static List<Compania> obtenerCompaniasTransporte() {
-                List<Compania> companias = new ArrayList<>();
+        public static ArrayList<Compania> obtenerCompaniasTransporte() {
+                ArrayList<Compania> companias = new ArrayList<>();
 
                 companias.add(new Compania("La Candelaria",
                                 new ArrayList<Viaje>(
