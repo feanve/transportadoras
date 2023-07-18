@@ -38,7 +38,7 @@ public class Compania {
     public Viaje getViaje(String id) {
         // retornar un viaje por el id
         for (Viaje viaje : listaViajes) {
-            if (viaje.getIdentificador().equals(nombre)) {
+            if (viaje.getIdentificador().equals(id)) {
                 return viaje;
             }
         }

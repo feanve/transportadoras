@@ -1,6 +1,7 @@
 package Terminales;
 
 import java.util.ArrayList;
+import javax.swing.Timer;
 
 import javax.swing.JOptionPane;
 
@@ -11,6 +12,7 @@ public class Consultas {
     static String infoCompanias = "";
     static String infoViajes = "";
     static int indice = 0;
+    static int delay = 2000;
 
     public static void consultarTerminales() {
 
@@ -22,8 +24,17 @@ public class Consultas {
             infoTerminalesPub += terminal + "\n";
         });
 
+
+        Timer timer = new Timer(delay, e -> {
+                // El código aquí se ejecutará cuando el temporizador expire
+                JOptionPane.getRootFrame().dispose(); // Cierra el diálogo
+            });
+
+            timer.setRepeats(false); // Indica que el temporizador no debe repetirse
+            timer.start();
+
         JOptionPane.showMessageDialog(null,
-                "Consultando información de terminales...");
+                "Consultando información de terminales...","", JOptionPane.INFORMATION_MESSAGE);
 
         JOptionPane.showMessageDialog(null,
                 "Terminales privados:\n\n" +
@@ -51,9 +62,19 @@ public class Consultas {
                 infoEmpresas += empresa + "\n";
             });
 
-            JOptionPane.showMessageDialog(null,
-                    "Consultando información de empresas patrocinadoras...");
+            Timer timer = new Timer(delay, e -> {
+                // El código aquí se ejecutará cuando el temporizador expire
+                JOptionPane.getRootFrame().dispose(); // Cierra el diálogo
+            });
 
+            timer.setRepeats(false); // Indica que el temporizador no debe repetirse
+            timer.start();
+
+           JOptionPane.showMessageDialog(null,
+                "Consultando informacion de empresas patrocinadoras...","", JOptionPane.INFORMATION_MESSAGE);
+
+
+            
             JOptionPane.showMessageDialog(null,
                     "Empresas patrocinadoras:\n\n" +
                             infoEmpresas);
@@ -78,10 +99,20 @@ public class Consultas {
 
         if (terminalPublico != null) {
             String recursosFormateados = String.format("%,.2f", terminalPublico.getRecursosPublicos());
+                
+            Timer timer = new Timer(delay, e -> {
+                // El código aquí se ejecutará cuando el temporizador expire
+                JOptionPane.getRootFrame().dispose(); // Cierra el diálogo
+            });
 
+            timer.setRepeats(false); // Indica que el temporizador no debe repetirse
+            timer.start();
+
+                
             JOptionPane.showMessageDialog(null,
-                    "Consultando el valor de recursos públicos...");
+                "Consultando el valor de recursos p\u00FAblicos...","", JOptionPane.INFORMATION_MESSAGE);
 
+            
             JOptionPane.showMessageDialog(null,
                     "Recursos públicos:\n\n" +
                             "$" + recursosFormateados);
@@ -111,9 +142,18 @@ public class Consultas {
                 infoCompanias += compania.getNombre() + "\n";
             });
 
-            JOptionPane.showMessageDialog(null,
-                    "Consultando información de compañías...");
+            Timer timer = new Timer(delay, e -> {
+                // El código aquí se ejecutará cuando el temporizador expire
+                JOptionPane.getRootFrame().dispose(); // Cierra el diálogo
+            });
 
+            timer.setRepeats(false); // Indica que el temporizador no debe repetirse
+            timer.start();
+
+            JOptionPane.showMessageDialog(null,
+                "Consultando informaci\u00F3n de compa\u00F1\u00EDas...","", JOptionPane.INFORMATION_MESSAGE);
+
+            
             JOptionPane.showMessageDialog(null,
                     "Compañías:\n\n" +
                             infoCompanias);
@@ -159,9 +199,19 @@ public class Consultas {
                 infoViajes += viaje + "\n";
             });
 
-            JOptionPane.showMessageDialog(null,
-                    "Consultando información de viajes...");
+            Timer timer = new Timer(delay, e -> {
+                // El código aquí se ejecutará cuando el temporizador expire
+                JOptionPane.getRootFrame().dispose(); // Cierra el diálogo
+            });
 
+            timer.setRepeats(false); // Indica que el temporizador no debe repetirse
+            timer.start();
+
+                
+            JOptionPane.showMessageDialog(null,
+                "Consultando informaci\u00F3n de viajes...","", JOptionPane.INFORMATION_MESSAGE);
+
+            
             JOptionPane.showMessageDialog(null,
                     "Viajes:\n\n" +
                             infoViajes);
@@ -201,8 +251,18 @@ public class Consultas {
 
         if (infoViajes != "") {
 
-            JOptionPane.showMessageDialog(null,
-                    "Consultando información de viajes...");
+                Timer timer = new Timer(delay, e -> {
+                        // El código aquí se ejecutará cuando el temporizador expire
+                        JOptionPane.getRootFrame().dispose(); // Cierra el diálogo
+                    });
+        
+                    timer.setRepeats(false); // Indica que el temporizador no debe repetirse
+                    timer.start();
+        
+                JOptionPane.showMessageDialog(null,
+                        "Consultando informaci\u00F3n de viajes...","", JOptionPane.INFORMATION_MESSAGE);
+        
+
 
             JOptionPane.showMessageDialog(null,
                     "Viajes:\n\n" +
